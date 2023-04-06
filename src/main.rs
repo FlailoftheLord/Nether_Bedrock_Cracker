@@ -16,8 +16,8 @@ fn main() {
     match contents {
         Ok(contents) => {
             let mut blocks: Vec<Block> = Vec::new();
-            for position in contents.split("\n") {
-                let mut position = position.split(" ");
+            for position in contents.lines() {
+                let mut position = position.split_whitespace();
                 let x = position.next().unwrap().parse::<i32>().unwrap();
                 let y = position.next().unwrap().parse::<i32>().unwrap();
                 let z = position.next().unwrap().parse::<i32>().unwrap();
